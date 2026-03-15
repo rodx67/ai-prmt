@@ -1,63 +1,60 @@
+```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
 <title>AI Prompt Generator</title>
+
 <style>
+
 body{
 font-family: Arial;
-text-align:center;
 background:#0f172a;
 color:white;
+text-align:center;
 padding:40px;
 }
 
-input{
-padding:10px;
-width:300px;
+.container{
+max-width:600px;
+margin:auto;
+background:#1e293b;
+padding:30px;
+border-radius:12px;
+}
+
+input,select{
+width:90%;
+padding:12px;
+margin:10px;
+border:none;
+border-radius:6px;
 font-size:16px;
 }
 
 button{
-padding:10px 20px;
-font-size:16px;
-margin-left:10px;
+padding:12px 20px;
 background:#22c55e;
 border:none;
-color:white;
+border-radius:6px;
+font-size:16px;
 cursor:pointer;
+color:white;
+}
+
+button:hover{
+background:#16a34a;
 }
 
 #result{
-margin-top:30px;
-font-size:18px;
-background:#1e293b;
+margin-top:20px;
+background:#020617;
 padding:20px;
-border-radius:10px;
+border-radius:8px;
+font-size:18px;
 }
-</style>
-</head>
 
-<body>
-
-<h1>AI Prompt Generator</h1>
-<p>Enter a topic and generate a prompt</p>
-
-<input id="topic" placeholder="Example: Space Travel">
-<button onclick="generate()">Generate</button>
-
-<div id="result"></div>
-
-<script>
-function generate(){
-
-let topic=document.getElementById("topic").value;
-
-let prompt="Write a detailed and creative article about "+topic+" including interesting facts and future possibilities.";
-
-document.getElementById("result").innerText=prompt;
-
-}
-</script>
-
-</body>
-</html>
+.adbox{
+margin-top:30px;
+padding:20p
+```
