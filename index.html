@@ -2,93 +2,61 @@
 <html>
 <head>
 <title>AI Prompt Generator</title>
-
 <style>
 body{
-font-family:Arial;
-background:#f4f4f4;
+font-family: Arial;
 text-align:center;
+background:#0f172a;
+color:white;
 padding:40px;
 }
 
-textarea{
-width:80%;
-height:120px;
+input{
 padding:10px;
+width:300px;
+font-size:16px;
 }
 
 button{
 padding:10px 20px;
-margin-top:10px;
-background:#333;
-color:white;
+font-size:16px;
+margin-left:10px;
+background:#22c55e;
 border:none;
+color:white;
 cursor:pointer;
 }
 
 #result{
-margin-top:20px;
-padding:20px;
-background:white;
-width:80%;
-margin-left:auto;
-margin-right:auto;
-}
-
-.ad{
 margin-top:30px;
-background:#ddd;
+font-size:18px;
+background:#1e293b;
 padding:20px;
+border-radius:10px;
 }
 </style>
 </head>
 
 <body>
 
-<h1>AI Prompt Tool</h1>
+<h1>AI Prompt Generator</h1>
+<p>Enter a topic and generate a prompt</p>
 
-<p>Enter your prompt and generate AI content</p>
-
-<textarea id="prompt" placeholder="Ask something..."></textarea>
-
-<br>
-
+<input id="topic" placeholder="Example: Space Travel">
 <button onclick="generate()">Generate</button>
 
 <div id="result"></div>
 
-<div class="ad">
-<!-- Google AdSense Ad -->
-Ad Space
-</div>
-
 <script>
+function generate(){
 
-async function generate(){
+let topic=document.getElementById("topic").value;
 
-let prompt=document.getElementById("prompt").value;
+let prompt="Write a detailed and creative article about "+topic+" including interesting facts and future possibilities.";
 
-let response=await fetch("https://api.openai.com/v1/chat/completions",{
-method:"POST",
-headers:{
-"Content-Type":"application/json",
-"Authorization":"Bearer YOUR_OPENAI_API_KEY"
-},
-body:JSON.stringify({
-model:"gpt-4o-mini",
-messages:[
-{role:"user",content:prompt}
-]
-})
-});
-
-let data=await response.json();
-
-document.getElementById("result").innerText=
-data.choices[0].message.content;
+document.getElementById("result").innerText=prompt;
 
 }
-
 </script>
 
 </body>
